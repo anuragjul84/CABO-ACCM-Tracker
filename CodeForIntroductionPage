@@ -1,0 +1,25 @@
+Private Sub Workbook_BeforeClose(Cancel As Boolean)
+
+Dim lRow As Single
+
+lRow = Worksheets("Log").Range("A" & Rows.Count).End(xlUp).Row + 1
+If Worksheets("Log").Range("A" & lRow - 1).Value = "Close workbook" Then lRow = lRow - 1
+Worksheets("Log").Range("A" & lRow).Value = Environ("UserName")
+Worksheets("Log").Range("B" & lRow).Value = "Close workbook"
+Worksheets("Log").Range("C" & lRow).Value = Now
+
+End Sub
+
+Private Sub Workbook_Open()
+
+ThisWorkbook.Worksheets("Instructions").Select
+
+Dim lRow As Single
+
+lRow = Worksheets("Log").Range("A1048576").End(xlUp).Row + 1
+Worksheets("Log").Range("A" & lRow).Value = Environ("UserName")
+Worksheets("Log").Range("B" & lRow).Value = "Open workbook"
+Worksheets("Log").Range("C" & lRow).Value = Now
+
+End Sub
+
