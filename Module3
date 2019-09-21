@@ -1,0 +1,32 @@
+Sub RoundedRectangle3_Click()
+    If Sheets("Log").Visible Then
+        Sheets("Log").Visible = False
+        'Sheets("Log").Select
+        'ToggleRoundedRectangle3.BackColor = 234
+        Else
+        Sheets("Log").Visible = True
+        Sheets("Log").Select
+        Sheets("Log").Visible = True
+    End If
+End Sub
+Sub Instructions_RoundedRectangle3_Click()
+    If Sheets("Team Details").Visible Then
+        Sheets("Team Details").Visible = False
+        'Sheets("Log").Select
+        'ToggleRoundedRectangle3.BackColor = 234
+        Else
+        Sheets("Team Details").Visible = True
+        Sheets("Team Details").Select
+        Sheets("Team Details").Visible = True
+    End If
+End Sub
+Private Sub UserForm_Activate()
+    With Me
+        'This will create a vertical scrollbar
+        .ScrollBars = fmScrollBarsVertical
+        
+        'Change the values of 2 as Per your requirements
+        .ScrollHeight = .InsideHeight * 2
+        .ScrollWidth = .InsideWidth * 9
+    End With
+End Sub
