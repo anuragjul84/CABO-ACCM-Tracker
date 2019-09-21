@@ -1,0 +1,12 @@
+Sub SaveSheet()
+    ActiveSheet.Copy
+    With ActiveSheet.UsedRange
+        .Copy
+        .PasteSpecial xlValues
+        '.PasteSpecial xlFormats
+        
+    End With
+    Application.CutCopyMode = False
+    'ActiveWorkbook.SaveAs "C:\Desktop\abc.xls" & Format(Range("E19"), "mmm-d-yyyy")
+End Sub
+
